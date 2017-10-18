@@ -1,5 +1,7 @@
-package com.leetcode;
+package com.leetcode.sum;
 
+import com.leetcode.sum.TwoSum;
+import com.leetcode.sum.TwoSumDemo;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,8 +9,14 @@ import org.junit.Test;
  * Created by Richard on 17/3/14.
  */
 
-public class TwoSumDemoTest {
+public class TwoSumTest {
 
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testTwoSum_notEnoughLength() {
+        int[] nums = new int[0];
+        TwoSum.twoSum(nums, 9);
+    }
 
     @Test
     public void testTwoSum_initTwo() {

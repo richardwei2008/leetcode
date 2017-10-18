@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.sum;
 
 import java.util.HashMap;
 
@@ -11,6 +11,7 @@ import java.util.HashMap;
  *
  */
 public class TwoSumDemo {
+
 
     public static int[] twoSum(int[] numbers, int target) {
         int[] result = new int[2];
@@ -25,6 +26,4 @@ public class TwoSumDemo {
         }
         return result;
     }
-
-    
 }

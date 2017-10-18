@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.longest;
 
 import java.util.HashSet;
 

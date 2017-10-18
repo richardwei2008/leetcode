@@ -1,14 +1,15 @@
-package com.leetcode;
+package com.leetcode.longest;
 
+import com.leetcode.longest.LongestSubstringDemo;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Created by Richard on 17/3/15.
  */
-public class LongestSubstringTest {
+public class LongestSubstringDemoTest {
 
-    private LongestSubstring longestSubstring = new LongestSubstring();
+    private LongestSubstringDemo longestSubstring = new LongestSubstringDemo();
 
     @Test
     public void testLongestSubstring_basic() {
