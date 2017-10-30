@@ -1,4 +1,6 @@
-package com.leetcode;
+package com.leetcode.list;
+
+import com.leetcode.ListNode;
 
 /**
  * Created by Richard on 17/3/14.

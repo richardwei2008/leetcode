@@ -1,5 +1,7 @@
-package com.leetcode;
+package com.leetcode.list;
 
+import com.leetcode.ListNode;
+import com.leetcode.list.AddTwoDemo;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,9 +18,9 @@ import org.junit.Test;
  * Output: 7 -> 0 -> 8
  *
  */
-public class AddTwoTest {
+public class AddTwoDemoTest {
 
-    private AddTwo addTwo = new AddTwo();
+    private AddTwoDemo addTwo = new AddTwoDemo();
 
     @Test
     public void testAddTwo_basic() {
@@ -52,5 +54,4 @@ public class AddTwoTest {
         expected.next.next = new ListNode(5);
         Assert.assertEquals(true, expected.equals(result));
     }
-
 }
