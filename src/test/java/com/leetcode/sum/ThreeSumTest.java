@@ -17,11 +17,11 @@ public class ThreeSumTest {
 
         List<List<Integer>> list = new ThreeSum().threeSum(nums);
 
-        // assert [-1, 0, 1] at list[0]
+        // assert [-1, -1, 2] at list[0]
         int[] expected1 = new int[]{-1, -1, 2};
         Assert.assertArrayEquals(expected1, toIntArray(list.get(0)));
 
-        // assert [-1, -1, 2] at list[1]
+        // assert [-1, 0, 1] at list[1]
         int[] expected2 = new int[]{-1, 0, 1};
         Assert.assertArrayEquals(expected2, toIntArray(list.get(1)));
 
