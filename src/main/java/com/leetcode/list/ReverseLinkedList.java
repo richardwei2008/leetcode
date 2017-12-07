@@ -22,29 +22,26 @@ public class ReverseLinkedList {
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode h = new ListNode(0);
         h.next = head;
-        ListNode pointer = h;
-        ListNode prev_m = h;
-        ListNode prev_n = h;
-        while (null != pointer.next) {
-            if (m > 0 && n > 0) {
-                if (m > 0) {
-                    prev_m = prev_m.next;
-                    m--;
-                }
-                if (n > 0) {
-                    prev_n = prev_n.next;
-                    n--;
-                }
-                pointer = pointer.next;
+        ListNode prev = h;
+        int i = m;
+        while (null != prev.next) {
+            if (i > 1) {
+                prev = prev.next;
+                i--;
             } else {
                 break;
             }
         }
-        if (prev_m != prev_n) {
-            prev_n.next.next = prev_m.next.next;
-            prev_m.next = prev_n.next;
-            prev_m.next.next = prev_n.next.next;
-            prev_n.next = prev_m.next;
+        ListNode start = prev.next; // a pointer to the beginning of a sub-list that will be reversed
+        ListNode then = start.next;
+        i = n - m;
+        // insert next to front one by one till n - m movements
+        while (i > 0) {
+            start.next = then.next;
+            then.next = prev.next;
+            prev.next = then;
+            then = start.next;
+            i--;
         }
 
         return h.next;

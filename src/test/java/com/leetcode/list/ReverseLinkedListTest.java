@@ -1,6 +1,7 @@
 package com.leetcode.list;
 
 import com.leetcode.ListNode;
+import junit.framework.Assert;
 import org.junit.Test;
 
 /**
@@ -37,7 +38,7 @@ public class ReverseLinkedListTest {
         ListNode actual = new ReverseLinkedList().reverseBetween(head, m, n);
 
         ListNode expected = new ListNode(1);
-        ListNode list1 = head;
+        ListNode list1 = expected;
         list1.next = new ListNode(4);
         list1 = list1.next;
         list1.next = new ListNode(3);
@@ -45,7 +46,7 @@ public class ReverseLinkedListTest {
         list1.next = new ListNode(2);
         list1 = list1.next;
         list1.next = new ListNode(5);
-        ListNode.listEquals(expected, actual);
+        Assert.assertEquals(true, ListNode.listEquals(expected, actual));
 
     }
 
@@ -60,10 +61,10 @@ public class ReverseLinkedListTest {
         ListNode actual = new ReverseLinkedList().reverseBetween(head, m, n);
 
         ListNode expected = new ListNode(5);
-        ListNode list1 = head;
+        ListNode list1 = expected;
         list1.next = new ListNode(3);
 
-        ListNode.listEquals(expected, actual);
+        Assert.assertEquals(true, ListNode.listEquals(expected, actual));
 
     }
 
@@ -78,7 +79,31 @@ public class ReverseLinkedListTest {
 
         ListNode expected = new ListNode(5);
 
-        ListNode.listEquals(expected, actual);
+        Assert.assertEquals(true, ListNode.listEquals(expected, actual));
+    }
 
+    @Test
+    public void testReverseBetween_beginToEnd() {
+        ListNode head = new ListNode(1);
+        ListNode list = head;
+        list.next = new ListNode(2);
+        list = list.next;
+        list.next = new ListNode(3);
+        list = list.next;
+        list.next = new ListNode(4);
+
+        int m = 1;
+        int n = 4;
+        ListNode actual = new ReverseLinkedList().reverseBetween(head, m, n);
+
+        ListNode expected = new ListNode(4);
+        ListNode list1 = expected;
+        list1.next = new ListNode(3);
+        list1 = list1.next;
+        list1.next = new ListNode(2);
+        list1 = list1.next;
+        list1.next = new ListNode(1);
+
+        Assert.assertEquals(true, ListNode.listEquals(expected, actual));
     }
 }
