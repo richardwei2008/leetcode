@@ -34,4 +34,22 @@ public class FindDuplicates {
         }
         return res;
     }
+
+    public List<Integer> findDuplicates2(int[] nums) {
+        for(int i = 0; i < nums.length; i++) {
+            // put nums[i] to it's right place if the right place is not already nums[i]
+            while(i != nums[i]-1 && nums[i] != nums[nums[i]-1]) {
+                int temp = nums[i];
+                nums[i] = nums[nums[i]-1];
+                nums[temp-1] = temp;
+            }
+        }
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i < nums.length; i++) {
+            if(i != nums[i]-1 && !result.contains(nums[i])) {
+                result.add(nums[i]);
+            }
+        }
+        return result;
+    }
 }
